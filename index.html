@@ -1,15 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Indian Faces Photography</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Indian Faces | Photography</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.10), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08), transparent 30%),
+        linear-gradient(135deg, #080808, #1b1b1b, #050505);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 70vw;
+    height: 70vw;
+    background: rgba(255,255,255,0.035);
+    filter: blur(80px);
+    border-radius: 50%;
+    animation: drift 12s ease-in-out infinite alternate;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+.brand {
+    font-size: clamp(42px, 8vw, 90px);
+    letter-spacing: 8px;
+    font-weight: normal;
+    margin-bottom: 14px;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.tagline {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 65px;
+    animation: fadeUp 2s ease forwards;
+}
+
+.status {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 18px;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.line {
+    width: 55px;
+    height: 1px;
+    background: rgba(255,255,255,0.7);
+    margin: 0 auto 25px;
+}
+
+.message {
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: normal;
+    letter-spacing: 1px;
+    animation: fadeUp 2.5s ease forwards;
+}
+
+.footer {
+    position: fixed;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.4;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 1; }
+}
+
+@keyframes drift {
+    from {
+        transform: translate(-10%, -5%) scale(1);
+    }
+    to {
+        transform: translate(10%, 5%) scale(1.15);
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Indian Faces</h1>
-    <p>Photography • Portraits • Families • Events</p>
+<div class="container">
 
-    <h2>Welcome</h2>
-    <p>Photography by Indian Faces.</p>
+    <div class="brand">INDIAN FACES</div>
+
+    <div class="tagline">
+        Photography · Portraits · Families · Events
+    </div>
+
+    <div class="status">
+        Website Under Construction
+    </div>
+
+    <div class="line"></div>
+
+    <div class="message">
+        Something beautiful is coming soon.
+    </div>
+
+</div>
+
+<div class="footer">
+    indianfaces.com
+</div>
 
 </body>
 </html>
