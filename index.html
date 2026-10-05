@@ -18,196 +18,260 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      background: #f5f5f2;
-      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
+      color: #f5f5f5;
+      line-height: 1.6;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      -webkit-user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
+      pointer-events: none;
     }
 
     /* NAVIGATION */
+
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 58px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6%;
-      background: rgba(245, 245, 242, 0.82);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 22px 6%;
+
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .logo {
-      font-size: 17px;
+      font-size: 20px;
+      letter-spacing: 4px;
       font-weight: 600;
-      letter-spacing: 1px;
     }
 
     nav a {
-      color: #111;
+      color: white;
       text-decoration: none;
-      font-size: 13px;
       margin-left: 28px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
     }
 
     /* HERO */
+
     .hero {
-      height: 100vh;
-      min-height: 650px;
+      min-height: 100vh;
+      position: relative;
+
       display: flex;
-      align-items: flex-end;
-      padding: 0 6% 8%;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      overflow: hidden;
+
       background:
-        linear-gradient(to top, rgba(0,0,0,.45), transparent 55%),
-        url("/DSC_9970.JPG")
-        center/cover no-repeat;
-      color: white;
-      -webkit-touch-callout: none;
-      user-select: none;
-      -webkit-user-select: none;
+        linear-gradient(
+          rgba(0,0,0,0.35),
+          rgba(0,0,0,0.65)
+        ),
+        url('/DSC_9970.JPG') center center / cover no-repeat;
     }
 
     .hero-content {
-      max-width: 800px;
+      position: relative;
+      z-index: 2;
+      padding: 30px;
     }
 
     .hero h1 {
-      font-size: clamp(54px, 9vw, 130px);
+      font-size: clamp(48px, 9vw, 110px);
+      letter-spacing: 12px;
       font-weight: 500;
-      letter-spacing: -5px;
-      line-height: .9;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      margin-top: 24px;
-      font-size: 18px;
-      letter-spacing: .5px;
+      font-size: 15px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      opacity: 0.85;
     }
 
-    /* INTRO */
-    .intro {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      padding: 10%;
+    /* SUBTLE ANIMATION */
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: rgba(255,255,255,0.02);
+
+      animation: breathe 6s ease-in-out infinite;
     }
 
-    .intro h2 {
-      max-width: 900px;
-      font-size: clamp(38px, 6vw, 80px);
-      font-weight: 400;
-      letter-spacing: -3px;
-      line-height: 1.05;
+    @keyframes breathe {
+      0%, 100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
     }
 
-    /* WORK */
-    .work {
-      padding: 0 6% 10%;
+    /* SECTIONS */
+
+    section {
+      padding: 110px 8%;
     }
 
     .section-title {
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 35px;
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      margin-bottom: 60px;
     }
 
+    /* GALLERY */
+
     .gallery {
+      max-width: 1200px;
+      margin: auto;
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
     }
 
     .gallery img {
       width: 100%;
-      height: 70vh;
+      height: 520px;
       object-fit: cover;
-      display: block;
-
-      /* Mobile photo protection */
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      user-select: none;
-      -webkit-user-drag: none;
-      pointer-events: none;
     }
 
-    .gallery img:nth-child(2) {
-      margin-top: 15vh;
+    .gallery img.contain {
+      object-fit: contain;
+      background: #111;
+    }
+
+    /* ABOUT */
+
+    .about {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #cfcfcf;
     }
 
     /* CONTACT */
+
     .contact {
-      min-height: 65vh;
-      padding: 10% 6%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      text-align: center;
+      background: #111;
     }
 
-    .contact h2 {
-      font-size: clamp(45px, 8vw, 110px);
-      font-weight: 400;
-      letter-spacing: -4px;
+    .contact p {
+      color: #bbb;
+      margin-bottom: 20px;
     }
 
     .contact a {
-      margin-top: 30px;
-      color: #111;
-      font-size: 18px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #777;
+      padding-bottom: 5px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #080808;
+      color: #777;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
     /* MOBILE */
+
     @media (max-width: 700px) {
 
       nav {
-        padding: 0 5%;
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 16px;
+        letter-spacing: 3px;
       }
 
       nav a {
-        margin-left: 12px;
-        font-size: 12px;
-      }
-
-      .hero {
-        padding: 0 5% 10%;
+        margin-left: 14px;
+        font-size: 11px;
       }
 
       .hero h1 {
-        letter-spacing: -3px;
+        letter-spacing: 7px;
       }
 
-      .intro {
-        padding: 18% 8%;
+      .hero p {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+
+      section {
+        padding: 80px 6%;
       }
 
       .gallery {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .gallery img {
-        height: 65vh;
+        height: auto;
       }
 
-      .gallery img:nth-child(2) {
-        margin-top: 0;
+      .section-title {
+        font-size: 27px;
       }
 
-      .work {
-        padding: 0 5% 18%;
-      }
-
-      .contact {
-        padding: 15% 5%;
+      .about p {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 
+
 <body>
+
+  <!-- NAVIGATION -->
 
   <nav>
     <div class="logo">INDIAN FACES</div>
@@ -218,62 +282,128 @@
     </div>
   </nav>
 
-  <section class="hero">
+
+  <!-- HERO -->
+
+  <header class="hero">
     <div class="hero-content">
-      <h1>INDIAN<br>FACES</h1>
-      <p>Photography · People · Stories</p>
+      <h1>INDIAN FACES</h1>
+
+      <p>
+        Photography · People · Stories
+      </p>
     </div>
-  </section>
+  </header>
 
-  <section class="intro">
-    <h2>
-      Photographing people, places and moments that deserve to be remembered.
+
+  <!-- WORK -->
+
+  <section id="work">
+
+    <h2 class="section-title">
+      Selected Work
     </h2>
-  </section>
-
-  <section class="work" id="work">
-
-    <div class="section-title">Selected Work</div>
 
     <div class="gallery">
 
-      <img src="/DSC_8759.jpg" style="object-fit: contain;" alt="Indian Faces photography">
+      <img
+        src="/DSC_8759.jpg"
+        alt="Indian Faces photography"
+        class="contain"
+      >
 
-      <img src="/DSC_2749.jpg" alt="Indian Faces photography">
+      <img
+        src="/DSC_2749.jpg"
+        alt="Indian Faces photography"
+      >
 
     </div>
 
   </section>
 
-  <section class="contact" id="contact">
 
-    <h2>Let's create<br>something memorable.</h2>
+  <!-- ABOUT -->
+
+  <section>
+
+    <div class="about">
+
+      <h2 class="section-title">
+        Indian Faces
+      </h2>
+
+      <p>
+        Photography focused on people, portraits, culture,
+        and authentic moments. Every photograph is created
+        with an emphasis on character, connection, and story.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">
+      Contact
+    </h2>
+
+    <p>
+      For photography inquiries and collaborations
+    </p>
 
     <a href="mailto:hello@indianfaces.com">
-      hello@indianfaces.com
+      Get in touch
     </a>
 
   </section>
 
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Indian Faces by JASKIRAN. All rights reserved.
+  </footer>
+
+
+  <!-- PROTECTION -->
+
   <script>
+
     /* Disable right-click */
-    document.addEventListener("contextmenu", function(event) {
-      event.preventDefault();
-    });
-
-    /* Disable dragging images */
-    document.addEventListener("dragstart", function(event) {
-      if (event.target.tagName === "IMG") {
+    document.addEventListener(
+      "contextmenu",
+      function(event) {
         event.preventDefault();
       }
-    });
+    );
 
-    /* Disable text/image selection */
-    document.addEventListener("selectstart", function(event) {
-      if (event.target.tagName === "IMG") {
-        event.preventDefault();
+    /* Disable image dragging */
+    document.addEventListener(
+      "dragstart",
+      function(event) {
+        if (event.target.tagName === "IMG") {
+          event.preventDefault();
+        }
       }
-    });
+    );
+
+    /* Disable image selection */
+    document.addEventListener(
+      "selectstart",
+      function(event) {
+        if (
+          event.target.tagName === "IMG" ||
+          event.target.closest("img")
+        ) {
+          event.preventDefault();
+        }
+      }
+    );
+
   </script>
 
 </body>
