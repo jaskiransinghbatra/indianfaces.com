@@ -74,7 +74,7 @@
       opacity: 0.6;
     }
 
-    /* HERO */
+    /* HERO SLIDESHOW */
 
     .hero {
       min-height: 100vh;
@@ -87,13 +87,55 @@
       text-align: center;
       overflow: hidden;
 
+      background: #000;
+    }
+
+    .slideshow {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+
+      -webkit-user-drag: none;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    /* DARK OVERLAY */
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
       background:
         linear-gradient(
-          rgba(0,0,0,0.35),
-          rgba(0,0,0,0.65)
-        ),
-        url('/DSC_9970.JPG') center center / cover no-repeat;
+          rgba(0, 0, 0, 0.30),
+          rgba(0, 0, 0, 0.62)
+        );
+
+      z-index: 1;
+      pointer-events: none;
     }
+
+    /* HERO TEXT */
 
     .hero-content {
       position: relative;
@@ -113,28 +155,6 @@
       letter-spacing: 5px;
       text-transform: uppercase;
       opacity: 0.85;
-    }
-
-    /* SUBTLE ANIMATION */
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background: rgba(255,255,255,0.02);
-
-      animation: breathe 6s ease-in-out infinite;
-    }
-
-    @keyframes breathe {
-      0%, 100% {
-        opacity: 0.3;
-      }
-
-      50% {
-        opacity: 0.7;
-      }
     }
 
     /* SECTIONS */
@@ -283,16 +303,48 @@
   </nav>
 
 
-  <!-- HERO -->
+  <!-- HERO SLIDESHOW -->
 
   <header class="hero">
+
+    <div class="slideshow">
+
+      <img
+        class="slide active"
+        src="/DSC_9970.JPG"
+        alt="Indian Faces photography"
+      >
+
+      <img
+        class="slide"
+        src="/DSC_0878.jpg"
+        alt="Indian Faces photography"
+      >
+
+      <img
+        class="slide"
+        src="/DSC_1780.jpg"
+        alt="Indian Faces photography"
+      >
+
+      <img
+        class="slide"
+        src="/DSC_7734.jpg"
+        alt="Indian Faces photography"
+      >
+
+    </div>
+
     <div class="hero-content">
+
       <h1>INDIAN FACES</h1>
 
       <p>
         Photography · People · Stories
       </p>
+
     </div>
+
   </header>
 
 
@@ -365,7 +417,7 @@
   <!-- FOOTER -->
 
   <footer>
-    © 2026 INDIANFACES BY JASKIRAN. ALL RIGHTS RESERVED.
+    © 2026 Indian Faces by Jaskiran. All rights reserved.
   </footer>
 
 
@@ -403,6 +455,27 @@
         }
       }
     );
+
+
+    /* HERO SLIDESHOW */
+
+    const slides = document.querySelectorAll(".slide");
+
+    let currentSlide = 0;
+
+    setInterval(function() {
+
+      slides[currentSlide].classList.remove("active");
+
+      currentSlide++;
+
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+
+      slides[currentSlide].classList.add("active");
+
+    }, 5000);
 
   </script>
 
