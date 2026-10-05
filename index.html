@@ -65,12 +65,14 @@
         url("/DSC_9970.JPG")
         center/cover no-repeat;
       color: white;
--webkit-touch-callout: none;
-user-select: none;
--webkit-user-select: none;
-}
-.hero-content {
-  max-width: 800px;
+      -webkit-touch-callout: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
 
     .hero h1 {
       font-size: clamp(54px, 9vw, 130px);
@@ -124,6 +126,13 @@ user-select: none;
       height: 70vh;
       object-fit: cover;
       display: block;
+
+      /* Mobile photo protection */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
     }
 
     .gallery img:nth-child(2) {
@@ -198,7 +207,7 @@ user-select: none;
   </style>
 </head>
 
-<body oncontextmenu="return false;">
+<body>
 
   <nav>
     <div class="logo">INDIAN FACES</div>
@@ -228,9 +237,9 @@ user-select: none;
 
     <div class="gallery">
 
-      <img src="/DSC_8759.jpg" style="object-fit: contain;">
+      <img src="/DSC_8759.jpg" style="object-fit: contain;" alt="Indian Faces photography">
 
-      <img src="/DSC_2749.jpg">
+      <img src="/DSC_2749.jpg" alt="Indian Faces photography">
 
     </div>
 
@@ -246,5 +255,26 @@ user-select: none;
 
   </section>
 
-<body oncontextmenu="return false;">
+  <script>
+    /* Disable right-click */
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault();
+    });
+
+    /* Disable dragging images */
+    document.addEventListener("dragstart", function(event) {
+      if (event.target.tagName === "IMG") {
+        event.preventDefault();
+      }
+    });
+
+    /* Disable text/image selection */
+    document.addEventListener("selectstart", function(event) {
+      if (event.target.tagName === "IMG") {
+        event.preventDefault();
+      }
+    });
+  </script>
+
+</body>
 </html>
