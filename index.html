@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -216,30 +216,45 @@
 
     /* SELECTED WORK */
 
+    #work {
+      padding: 110px 0 0;
+      scroll-margin-top: 80px;
+    }
+
+    #work .section-title {
+      margin: 0 20px 40px;
+    }
+
     .gallery {
-      max-width: 1200px;
+      width: 100%;
+      max-width: none;
 
-      margin: auto;
+      margin: 0;
 
-      display: grid;
+      display: flex;
+      flex-direction: column;
 
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 30px;
+      gap: 0;
     }
 
     .gallery img {
       width: 100%;
 
-      height: 520px;
+      height: calc(100vh - 80px);
+      height: calc(100svh - 80px);
 
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
+
+      background: #ffffff;
+
+      margin: 0;
+      padding: 0;
     }
 
     .gallery img.contain {
       object-fit: contain;
-
-      background: #f5f5f5;
+      background: #ffffff;
     }
 
 
@@ -348,14 +363,29 @@
         padding: 80px 6%;
       }
 
+      #work {
+        padding: 90px 0 0;
+        scroll-margin-top: 65px;
+      }
+
+      #work .section-title {
+        font-size: 27px;
+        margin: 0 15px 25px;
+      }
+
       .gallery {
         grid-template-columns: 1fr;
-
-        gap: 20px;
+        gap: 0;
       }
 
       .gallery img {
-        height: auto;
+        width: 100%;
+
+        height: calc(100vh - 65px);
+        height: calc(100svh - 65px);
+
+        object-fit: contain;
+        background: #ffffff;
       }
 
       .section-title {
@@ -622,4 +652,3 @@
 
 </body>
 </html>
-```
