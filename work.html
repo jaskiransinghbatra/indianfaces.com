@@ -1,1 +1,217 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Work — Indian Faces Photography</title>
+
+  <meta name="description" content="Selected human portraits and street photography by JASKIRAN SINGH BATRA at Indian Faces.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 22px 6%;
+
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      color: #111111;
+      text-decoration: none;
+      font-size: 20px;
+      letter-spacing: 4px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    nav a {
+      color: #111111;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    /* WORK PAGE */
+
+    main {
+      padding-top: 90px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      padding: 30px 15px;
+    }
+
+    .gallery {
+      width: 100%;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: calc(100vh - 90px);
+      height: calc(100svh - 90px);
+      object-fit: contain;
+      object-position: center;
+      background: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #777777;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 15px;
+        letter-spacing: 2px;
+      }
+
+      nav a {
+        margin-left: 12px;
+        font-size: 10px;
+        letter-spacing: 0.5px;
+      }
+
+      main {
+        padding-top: 75px;
+      }
+
+      .page-title {
+        font-size: 27px;
+        padding: 25px 10px;
+      }
+
+      .gallery img {
+        height: calc(100vh - 75px);
+        height: calc(100svh - 75px);
+        object-fit: contain;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a class="logo" href="/">INDIAN FACES</a>
+
+    <div>
+      <a href="/#about">About</a>
+      <a href="/work.html">Work</a>
+      <a href="/#prints">Prints</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- PHOTOGRAPHY GALLERY -->
+
+  <main>
+    <h1 class="page-title">Selected Work</h1>
+
+    <div class="gallery">
+      <img
+        src="/DSC_8759.jpg"
+        alt="Indian Faces portrait photography"
+      >
+
+      <img
+        src="/DSC_2749.jpg"
+        alt="Indian Faces street photography"
+      >
+    </div>
+  </main>
+
+  <!-- COPYRIGHT -->
+
+  <footer>
+    © 2026 INDIAN FACES BY JASKIRAN SINGH BATRA. ALL RIGHTS RESERVED.
+  </footer>
+
+  <!-- PROTECTION -->
+
+  <script>
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener("dragstart", function(event) {
+      if (event.target.tagName === "IMG") {
+        event.preventDefault();
+      }
+    });
+
+    document.addEventListener("selectstart", function(event) {
+      if (
+        event.target.tagName === "IMG" ||
+        event.target.closest("img")
+      ) {
+        event.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+</html>
+
