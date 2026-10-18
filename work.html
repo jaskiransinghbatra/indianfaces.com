@@ -24,16 +24,17 @@
       font-family: Arial, Helvetica, sans-serif;
       background: #ffffff;
       color: #111111;
+      line-height: 1.6;
       user-select: none;
       -webkit-user-select: none;
     }
 
     img {
-      display: block;
       max-width: 100%;
+      display: block;
+      -webkit-user-drag: none;
       user-select: none;
       -webkit-user-select: none;
-      -webkit-user-drag: none;
       pointer-events: none;
     }
 
@@ -52,18 +53,18 @@
 
       padding: 22px 6%;
 
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(245, 245, 242, 0.82);
+
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
 
     .logo {
-      color: #111111;
-      text-decoration: none;
       font-size: 20px;
       letter-spacing: 4px;
       font-weight: 600;
-      white-space: nowrap;
+      color: #111111;
+      text-decoration: none;
     }
 
     nav a {
@@ -73,13 +74,14 @@
       font-size: 13px;
       letter-spacing: 1px;
       text-transform: uppercase;
+      transition: opacity 0.3s ease;
     }
 
     nav a:hover {
       opacity: 0.6;
     }
 
-    /* WORK PAGE */
+    /* MAIN CONTENT */
 
     main {
       padding-top: 90px;
@@ -90,30 +92,62 @@
       font-size: 34px;
       font-weight: 400;
       letter-spacing: 4px;
-      padding: 30px 15px;
+      margin: 0 20px 40px;
+      color: #111111;
     }
+
+    /* PHOTOGRAPHY GALLERY */
 
     .gallery {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
-    .gallery img {
+    .gallery-item {
       width: 100%;
-      height: calc(100vh - 90px);
-      height: calc(100svh - 90px);
-      object-fit: contain;
-      object-position: center;
-      background: #ffffff;
       margin-bottom: 2in;
     }
 
-    .gallery img:last-child {
+    .gallery-item:last-child {
       margin-bottom: 0;
     }
+
+    .gallery-item img {
+      width: 100%;
+      height: calc(100vh - 90px);
+      height: calc(100svh - 90px);
+
+      object-fit: contain;
+      object-position: center;
+
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* PHOTO CAPTIONS */
+
+    .caption {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      color: #111111;
+      opacity: 0.5;
+      padding: 0 16px;
+      margin-top: 8px;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
       padding: 30px 20px;
+      background: #ffffff;
       color: #777777;
       font-size: 12px;
       letter-spacing: 1px;
@@ -127,14 +161,13 @@
       }
 
       .logo {
-        font-size: 15px;
-        letter-spacing: 2px;
+        font-size: 16px;
+        letter-spacing: 3px;
       }
 
       nav a {
-        margin-left: 12px;
-        font-size: 10px;
-        letter-spacing: 0.5px;
+        margin-left: 14px;
+        font-size: 11px;
       }
 
       main {
@@ -143,13 +176,19 @@
 
       .page-title {
         font-size: 27px;
-        padding: 25px 10px;
+        margin: 0 15px 25px;
       }
 
-      .gallery img {
+      .gallery-item img {
         height: calc(100vh - 75px);
         height: calc(100svh - 75px);
         object-fit: contain;
+        background: #ffffff;
+      }
+
+      .caption {
+        font-size: 11px;
+        margin-top: 8px;
       }
     }
   </style>
@@ -160,7 +199,7 @@
   <!-- NAVIGATION -->
 
   <nav>
-    <a class="logo" href="/">INDIAN FACES</a>
+    <a href="/" class="logo">INDIAN FACES</a>
 
     <div>
       <a href="/#about">About</a>
@@ -176,75 +215,147 @@
     <h1 class="page-title">Selected Work</h1>
 
     <div class="gallery">
-      <img
-        src="/DSC_8759.jpg"
-        alt="Indian Faces portrait photography"
-      >
 
-      <img
-        src="/DSC_2749.jpg"
-        alt="Indian Faces street photography"
-      >
+      <!-- PHOTO 1 -->
 
-      <img
-        src="/DSC_5513.jpg"
-        alt="Indian Faces photography"
-      >
+      <div class="gallery-item">
+        <img
+          src="/DSC_8759.jpg"
+          alt="Indian Faces photography"
+        >
+        <p class="caption">
+          Plaza, Sector 17, Chandigarh, 2017.
+        </p>
+      </div>
 
-      <img
-        src="/DSC_5527.jpg"
-        alt="Indian Faces photography"
-      >
+      <!-- PHOTO 2 -->
 
-      <img
-        src="/DSC_0367.jpg"
-        alt="Indian Faces photography"
-      >
+      <div class="gallery-item">
+        <img
+          src="/DSC_2749.jpg"
+          alt="A broken sewerage pipeline in Sector 52, Chandigarh"
+        >
+        <p class="caption">
+          A broken sewerage pipeline. Sector 52, Chandigarh, 2011.
+        </p>
+      </div>
 
-      <img
-        src="/DSC_5193.jpg"
-        alt="Indian Faces photography"
-      >
+      <!-- PHOTO 3 -->
 
-      <img
-        src="/DSC_6772.jpg"
-        alt="Indian Faces photography"
-      >
+      <div class="gallery-item">
+        <img
+          src="/DSC_5513.jpg"
+          alt="Indian Faces photography"
+        >
+        <p class="caption">
+          Kalagram Fest, Chandigarh, 2019.
+        </p>
+      </div>
 
-      <img
-        src="/DSC_2000.JPG"
-        alt="Indian Faces photography"
-      >
+      <!-- PHOTO 4 -->
 
-      <img
-        src="/DSC_2038.JPG"
-        alt="Indian Faces photography"
-      >
+      <div class="gallery-item">
+        <img
+          src="/DSC_5527.jpg"
+          alt="Indian Faces photography"
+        >
+        <p class="caption">
+          Kalagram Fest, Chandigarh, 2019.
+        </p>
+      </div>
 
-      <img
-        src="/DSC_5459.jpg"
-        alt="Indian Faces photography"
-      >
+      <!-- PHOTO 5 -->
 
-      <img
-        src="/DSC_5487.jpg"
-        alt="Indian Faces photography"
-      >
+      <div class="gallery-item">
+        <img
+          src="/DSC_0367.jpg"
+          alt="Punjab and Haryana High Court, Chandigarh"
+        >
+        <p class="caption">
+          Punjab &amp; Haryana High Court, Chandigarh, 2016.
+        </p>
+      </div>
 
-      <img
-        src="/DSC_5567.jpg"
-        alt="Indian Faces photography"
-      >
+      <!-- PHOTO 6 -->
 
-      <img
-        src="/DSC_7698.jpg"
-        alt="Indian Faces photography"
-      >
+      <div class="gallery-item">
+        <img
+          src="/DSC_5193.jpg"
+          alt="Indian Faces photography"
+        >
+      </div>
 
-      <img
-        src="/DSC_8851.jpg"
-        alt="Indian Faces photography"
-      >
+      <!-- PHOTO 7 -->
+
+      <div class="gallery-item">
+        <img
+          src="/DSC_6772.jpg"
+          alt="Indian Faces photography"
+        >
+      </div>
+
+      <!-- PHOTO 8 -->
+
+      <div class="gallery-item">
+        <img
+          src="/DSC_2000.JPG"
+          alt="Indian Faces photography"
+        >
+      </div>
+
+      <!-- PHOTO 9 -->
+
+      <div class="gallery-item">
+        <img
+          src="/DSC_2038.JPG"
+          alt="Indian Faces photography"
+        >
+      </div>
+
+      <!-- PHOTO 10 -->
+
+      <div class="gallery-item">
+        <img
+          src="/DSC_5459.jpg"
+          alt="Indian Faces photography"
+        >
+      </div>
+
+      <!-- PHOTO 11 -->
+
+      <div class="gallery-item">
+        <img
+          src="/DSC_5487.jpg"
+          alt="Indian Faces photography"
+        >
+      </div>
+
+      <!-- PHOTO 12 -->
+
+      <div class="gallery-item">
+        <img
+          src="/DSC_5567.jpg"
+          alt="Indian Faces photography"
+        >
+      </div>
+
+      <!-- PHOTO 13 -->
+
+      <div class="gallery-item">
+        <img
+          src="/DSC_7698.jpg"
+          alt="Indian Faces photography"
+        >
+      </div>
+
+      <!-- PHOTO 14 -->
+
+      <div class="gallery-item">
+        <img
+          src="/DSC_8851.jpg"
+          alt="Indian Faces photography"
+        >
+      </div>
 
     </div>
   </main>
@@ -252,30 +363,47 @@
   <!-- COPYRIGHT -->
 
   <footer>
-    © 2026 INDIAN FACES BY JASKIRAN SINGH BATRA. ALL RIGHTS RESERVED.
+    <div>
+      © 2026 INDIAN FACES BY JASKIRAN SINGH BATRA. ALL RIGHTS RESERVED.
+    </div>
   </footer>
 
   <!-- PROTECTION -->
 
   <script>
-    document.addEventListener("contextmenu", function(event) {
-      event.preventDefault();
-    });
+    /* Disable right-click */
 
-    document.addEventListener("dragstart", function(event) {
-      if (event.target.tagName === "IMG") {
+    document.addEventListener(
+      "contextmenu",
+      function(event) {
         event.preventDefault();
       }
-    });
+    );
 
-    document.addEventListener("selectstart", function(event) {
-      if (
-        event.target.tagName === "IMG" ||
-        event.target.closest("img")
-      ) {
-        event.preventDefault();
+    /* Disable dragging images */
+
+    document.addEventListener(
+      "dragstart",
+      function(event) {
+        if (event.target.tagName === "IMG") {
+          event.preventDefault();
+        }
       }
-    });
+    );
+
+    /* Disable selecting images */
+
+    document.addEventListener(
+      "selectstart",
+      function(event) {
+        if (
+          event.target.tagName === "IMG" ||
+          event.target.closest("img")
+        ) {
+          event.preventDefault();
+        }
+      }
+    );
   </script>
 
 </body>
